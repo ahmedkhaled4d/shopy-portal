@@ -1,12 +1,10 @@
+import { useRoutes } from "react-router-dom";
+import ThemeRoutes from "./routes/Router";
 import "./App.css";
-import { Button } from "antd";
 
 function App() {
-  return (
-    <div className="App">
-      <Button type="primary">Button</Button>
-    </div>
-  );
+  const routing = useRoutes(ThemeRoutes);
+  return <div>{routing}</div>;
 }
 
 export default App;
