@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Avatar, List, Skeleton } from "antd";
+import { Avatar, List, Rate, Skeleton } from "antd";
 import { Layout } from "antd";
 
 const { Content } = Layout;
@@ -21,7 +21,7 @@ interface DataType {
   loading: boolean;
 }
 
-const count = 6;
+const count = 10;
 const fakeDataUrl = `https://randomuser.me/api/?results=${count}&inc=name,gender,email,nat,picture&noinfo`;
 
 const Reviews: React.FC = () => {
@@ -53,10 +53,15 @@ const Reviews: React.FC = () => {
         dataSource={list}
         renderItem={(item) => (
           <List.Item>
+            {/* <Rate disabled defaultValue={2} />; */}
             <Skeleton avatar title={false} loading={item.loading} active>
               <List.Item.Meta
                 avatar={<Avatar src={item.picture.large} size={64} />}
-                title={<a href="/reviews">{item.name?.last}</a>}
+                title={
+                  <>
+                    <p>{item.name?.last}</p> <Rate disabled defaultValue={5} />
+                  </>
+                }
                 description="Ant Design, a design language for background applications, is refined by Ant UED Team"
               />
             </Skeleton>

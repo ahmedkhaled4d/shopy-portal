@@ -2,15 +2,16 @@ import React from "react";
 import { Outlet } from "react-router-dom";
 import { Flex, Layout } from "antd";
 import Reviews from "../components/auth/Reviews";
+import { useMediaQuery } from "react-responsive";
 
 const AuthLayout: React.FC = () => {
+  // Define the media query for mobile devices
+  const isMobile = useMediaQuery({ maxWidth: 767 });
   const { Sider, Content } = Layout;
-
   const siderStyle: React.CSSProperties = {
     textAlign: "center",
     lineHeight: "120px",
-    color: "#f7f1e3",
-    backgroundColor: "#e6f4ff",
+    backgroundColor: "#f7f1e3",
   };
   const layoutStyle = {
     borderRadius: 5,
@@ -31,9 +32,11 @@ const AuthLayout: React.FC = () => {
             <img src="/logo.png" height={100} alt="logo" />
             <Outlet />
           </Content>
-          <Sider width="60%" style={siderStyle}>
-            <Reviews />
-          </Sider>
+          {!isMobile && (
+            <Sider width="60%" style={siderStyle}>
+              <Reviews />
+            </Sider>
+          )}
         </Layout>
       </Layout>
     </Flex>
