@@ -10,7 +10,8 @@ const AuthLayout: React.FC = () => {
   const { Sider, Content } = Layout;
   const siderStyle: React.CSSProperties = {
     textAlign: "center",
-    lineHeight: "120px",
+    height: "100vh",
+    overflow: "hidden",
     backgroundColor: "#f7f1e3",
   };
   const layoutStyle = {
@@ -18,11 +19,12 @@ const AuthLayout: React.FC = () => {
     overflow: "hidden",
   };
   const contentStyle: React.CSSProperties = {
-    // textAlign: "center",
+    textAlign: "center",
     padding: 50,
     minHeight: 220,
     lineHeight: "220px",
     backgroundColor: "#fff",
+    flex: 1,
   };
   return (
     <Flex gap="middle" wrap>
