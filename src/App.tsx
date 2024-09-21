@@ -4,7 +4,7 @@ import "./App.css";
 
 function App() {
   const routing = useRoutes(ThemeRoutes);
-  return <div>{routing}</div>;
+  return routing;
 }
 
 export default App;
