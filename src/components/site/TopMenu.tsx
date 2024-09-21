@@ -5,7 +5,8 @@ import {
   SettingOutlined,
 } from "@ant-design/icons";
 import type { MenuProps } from "antd";
-import { Menu } from "antd";
+import { Menu, Layout, Image } from "antd";
+const { Header } = Layout;
 
 type MenuItem = Required<MenuProps>["items"][number];
 
@@ -19,7 +20,7 @@ const items: MenuItem[] = [
     label: "Navigation Two",
     key: "app",
     icon: <AppstoreOutlined />,
-    disabled: true,
+    // disabled: true,
   },
   {
     label: "Navigation Three - Submenu",
@@ -63,12 +64,30 @@ const TopMenu: React.FC = () => {
   };
 
   return (
-    <Menu
-      onClick={onClick}
-      selectedKeys={[current]}
-      mode="horizontal"
-      items={items}
-    />
+    <Header
+      style={{
+        display: "flex",
+        // alignItems: "center",
+        background: "#fff",
+        padding: "0 50px",
+      }}
+    >
+      <div style={{ marginRight: "20px" }}>
+        <Image
+          src="/images/logo.png"
+          alt="Logo"
+          preview={false}
+          style={{ maxHeight: "80px" }}
+        />
+      </div>
+      <Menu
+        style={{ flex: 1, minWidth: 0 }}
+        onClick={onClick}
+        selectedKeys={[current]}
+        mode="horizontal"
+        items={items}
+      />
+    </Header>
   );
 };
 

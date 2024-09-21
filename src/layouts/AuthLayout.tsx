@@ -29,7 +29,7 @@ const AuthLayout: React.FC = () => {
       <Layout style={layoutStyle}>
         <Layout>
           <Content style={contentStyle}>
-            <img src="/logo.png" height={100} alt="logo" />
+            <img src="/images/logo.png" height={100} alt="logo" />
             <Outlet />
           </Content>
           {!isMobile && (
