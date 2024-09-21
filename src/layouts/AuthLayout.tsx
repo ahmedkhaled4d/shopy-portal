@@ -10,7 +10,7 @@ const AuthLayout: React.FC = () => {
     textAlign: "center",
     lineHeight: "120px",
     color: "#f7f1e3",
-    backgroundColor: "#ccc",
+    backgroundColor: "#e6f4ff",
   };
   const layoutStyle = {
     borderRadius: 5,
@@ -26,10 +26,9 @@ const AuthLayout: React.FC = () => {
   return (
     <Flex gap="middle" wrap>
       <Layout style={layoutStyle}>
-        {/* <Header style={headerStyle}>Shoppy Logo</Header> */}
         <Layout>
           <Content style={contentStyle}>
-            <img src="/logo.png" height={100} />
+            <img src="/logo.png" height={100} alt="logo" />
             <Outlet />
           </Content>
           <Sider width="60%" style={siderStyle}>

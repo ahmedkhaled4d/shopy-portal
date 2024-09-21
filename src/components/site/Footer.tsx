@@ -1,5 +1,12 @@
-function Footer() {
-  return <h1>Footer</h1>;
+import { Layout } from "antd";
+const { Footer } = Layout;
+
+function BasicFooter() {
+  return (
+    <Footer style={{ textAlign: "center" }}>
+      Ant Design ©{new Date().getFullYear()} Created by Ant UED
+    </Footer>
+  );
 }
 
-export default Footer;
+export default BasicFooter;
